@@ -10,9 +10,28 @@ import Foundation
 import CoreData
 
 public class ToDoItem:NSManagedObject, Identifiable {
-    @NSManaged public var createdAt:Date?
-    @NSManaged public var title: String?
+    @NSManaged public var dueDate:Date
+    @NSManaged public var title: String
+    @NSManaged public var isComplete: Bool
 }
+
+struct ToDo {
+    var dueDate:Date
+    var title: String
+    var isComplete: Bool
+    
+    static func loadToDos()-> [ToDo]? {
+        return nil
+    }
+    static func loadSampleToDos() -> [ToDo] {
+        let todo1 = ToDo(dueDate: Date(), title: "ToDo One", isComplete: false)
+        
+        return [todo1]
+    }
+    
+}
+
+
 
 extension ToDoItem {
     static func getAllToDoItems() -> NSFetchRequest<ToDoItem> {

@@ -19,6 +19,7 @@
 		5DA88E3F23B801D600641CAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DA88E3523B7EAEF00641CAF /* Assets.xcassets */; };
 		5DA88E4223B80E7A00641CAF /* ToDo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5DA88E4023B80E7A00641CAF /* ToDo.xcdatamodeld */; };
 		5DA88E4423B80FCF00641CAF /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA88E4323B80FCF00641CAF /* ToDoItem.swift */; };
+		5DD123D923B9033E00376E6C /* AddToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD123D823B9033E00376E6C /* AddToDoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		5DA88E3523B7EAEF00641CAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DA88E4123B80E7A00641CAF /* ToDo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDo.xcdatamodel; sourceTree = "<group>"; };
 		5DA88E4323B80FCF00641CAF /* ToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		5DD123D823B9033E00376E6C /* AddToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				5DA88E0723B7A93A00641CAF /* FirstViewController.swift */,
 				5DA88E0923B7A93A00641CAF /* SecondViewController.swift */,
+				5DD123D823B9033E00376E6C /* AddToDoTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DA88E4223B80E7A00641CAF /* ToDo.xcdatamodeld in Sources */,
+				5DD123D923B9033E00376E6C /* AddToDoTableViewController.swift in Sources */,
 				5DA88E0A23B7A93A00641CAF /* SecondViewController.swift in Sources */,
 				5DA88E4423B80FCF00641CAF /* ToDoItem.swift in Sources */,
 				5DA88E0823B7A93A00641CAF /* FirstViewController.swift in Sources */,

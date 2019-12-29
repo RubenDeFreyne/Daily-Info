@@ -12,6 +12,7 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var feelTemperatureLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -33,11 +34,12 @@ class FirstViewController: UIViewController {
                     guard let weatherDetails = json["weather"] as? [[String: Any]], let weatherMain = json ["main"] as? [String: Any]
                         else {return}
                     let temp = Int(weatherMain["temp"] as? Double ?? 0)
+                    let feelTemp = Int(weatherMain["feels_like"] as? Double ?? 0)
                     let description = (weatherDetails.first?["description"] as? String)?.capitalizeFirstLetter()
                     
                     //passing elements to function
                     DispatchQueue.main.async {
-                        self.setWeather(weather: weatherDetails.first?["main"] as? String,  description: description, temp: temp)
+                        self.setWeather(weather: weatherDetails.first?["main"] as? String,  description: description, temp: temp, feelTemp: feelTemp)
                     }
                 }catch {
                     print("error")
@@ -47,17 +49,23 @@ class FirstViewController: UIViewController {
         task.resume()
     }
     
-    func setWeather(weather: String?, description: String?, temp: Int) {
+    func setWeather(weather: String?, description: String?, temp: Int, feelTemp: Int) {
         descriptionLabel.text = description ?? "..."
         temperatureLabel.text = "\(temp)°C"
+        feelTemperatureLabel.text = "\(feelTemp)°C"
         switch weather {
-        case "Clear sky":
+        case "Clear":
             imageView.image = UIImage(named: "Sunny")
             background.backgroundColor = UIColor(red: 0.95, green: 0.78, blue: 0.35, alpha:1.0)
-        case "Few clouds":
-            imageView.image = UIImage(named: "Cloudy")
-            background.backgroundColor = UIColor(red: 0.42, green: 0.55, blue: 0.71, alpha:1.0)
-        case "Shower rain":
+        case "Clouds":
+            if description == "Few clouds" {
+                imageView.image = UIImage(named: "Cloudy")
+                background.backgroundColor = UIColor(red: 0.42, green: 0.55, blue: 0.71, alpha:1.0)
+            } else {
+                imageView.image = UIImage(named: "Clouds")
+                background.backgroundColor = UIColor(red: 0.65, green: 0.65, blue: 0.65, alpha:1.0)
+            }
+        case "Drizzle":
             imageView.image = UIImage(named: "Rain")
             background.backgroundColor = UIColor(red: 0.65, green: 0.65, blue: 0.65, alpha:1.0)
         case "Rain":
@@ -69,12 +77,9 @@ class FirstViewController: UIViewController {
         case "Snow":
             imageView.image = UIImage(named: "Snow")
             background.backgroundColor = UIColor(red: 0.77, green: 0.77, blue: 0.77, alpha:1.0)
-        case "Mist":
+        default:
             imageView.image = UIImage(named: "Mist")
             background.backgroundColor = UIColor(red: 0.77, green: 0.77, blue: 0.77, alpha:1.0)
-        default:
-            imageView.image = UIImage(named: "Clouds")
-            background.backgroundColor = UIColor(red: 0.65, green: 0.65, blue: 0.65, alpha:1.0)
         }
     }
 }
