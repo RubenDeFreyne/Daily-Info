@@ -28,7 +28,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloudy" translatesAutoresizingMaskIntoConstraints="NO" id="3IV-me-48y">
-                                <rect key="frame" x="82" y="323" width="250" height="250"/>
+                                <rect key="frame" x="-43" y="198" width="500" height="500"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3IV-me-48y" secondAttribute="height" multiplier="1:1" id="DEU-ye-6aM"/>
                                 </constraints>
@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1072" y="250"/>
+            <point key="canvasLocation" x="-194" y="190"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -112,29 +112,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" textLabel="X27-MQ-gej" detailTextLabel="LT9-R4-dfX" style="IBUITableViewCellStyleSubtitle" id="lAg-Jl-IEQ">
-                                <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ToDoCellIdentifier" id="lAg-Jl-IEQ" customClass="ToDoCell" customModule="Daily_Info" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lAg-Jl-IEQ" id="3H9-4Y-h7K">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="X27-MQ-gej">
-                                            <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLt-CD-IZp">
+                                            <rect key="frame" x="20" y="11" width="22" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="oLt-CD-IZp" secondAttribute="height" multiplier="1:1" id="HXE-Jc-IPu"/>
+                                            </constraints>
+                                            <state key="normal" image="checkmark.circle" catalog="system"/>
+                                            <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                            <connections>
+                                                <action selector="completeButtonTapped:" destination="lAg-Jl-IEQ" eventType="touchUpInside" id="Spp-xs-skm"/>
+                                                <action selector="isCompleteButtonTapped:" destination="cQr-ru-F3G" eventType="touchUpInside" id="Hsg-Y6-rLO"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5T-PB-3Ri">
+                                            <rect key="frame" x="62" y="11.5" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LT9-R4-dfX">
-                                            <rect key="frame" x="20" y="31.5" width="33" height="14.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="f5T-PB-3Ri" secondAttribute="trailing" constant="20" id="CHf-aZ-bbA"/>
+                                        <constraint firstItem="oLt-CD-IZp" firstAttribute="centerY" secondItem="3H9-4Y-h7K" secondAttribute="centerY" id="U3b-ob-KJM"/>
+                                        <constraint firstItem="f5T-PB-3Ri" firstAttribute="centerY" secondItem="3H9-4Y-h7K" secondAttribute="centerY" id="axs-Hh-VR2"/>
+                                        <constraint firstItem="oLt-CD-IZp" firstAttribute="leading" secondItem="3H9-4Y-h7K" secondAttribute="leading" constant="20" id="fEh-ej-xlR"/>
+                                        <constraint firstItem="f5T-PB-3Ri" firstAttribute="leading" secondItem="oLt-CD-IZp" secondAttribute="trailing" constant="20" id="jhb-bW-8bm"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="isCompleteButton" destination="oLt-CD-IZp" id="rAe-I2-JiQ"/>
+                                    <outlet property="titleLabel" destination="f5T-PB-3Ri" id="sUJ-CY-Tay"/>
+                                    <segue destination="A7u-Zv-VDe" kind="presentation" identifier="EditToDo" id="lfe-XP-1ir"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -230,8 +246,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hIc-XL-qUK">
-                                                    <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hIc-XL-qUK">
+                                                    <rect key="frame" x="20" y="12" width="41" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -256,6 +272,9 @@
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="m5z-in-QsR">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="216"/>
+                                                    <connections>
+                                                        <action selector="dueDatePickerChanged:" destination="cQr-ru-F3G" eventType="primaryActionTriggered" id="5FT-2N-MK2"/>
+                                                    </connections>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -325,4 +344,7 @@
         <image name="cloud" catalog="system" width="64" height="42"/>
         <image name="list.bullet" catalog="system" width="64" height="44"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="lfe-XP-1ir"/>
+    </inferredMetricsTieBreakers>
 </document>

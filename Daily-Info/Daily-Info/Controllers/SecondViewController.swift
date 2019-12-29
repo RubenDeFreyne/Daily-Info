@@ -8,7 +8,16 @@
 
 import UIKit
 
-class SecondViewController: UITableViewController {
+class SecondViewController: UITableViewController, ToDoCellDelegate{
+    func checkmarkTapped(sender: ToDoCell) {
+        if let indexPath = tableView.indexPath(for: sender) {
+            var todo = todos[indexPath.row]
+            todo.isComplete = !todo.isComplete
+            todos[indexPath.row] = todo
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
 
     var todos = [ToDo]()
     
@@ -17,16 +26,14 @@ class SecondViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier", for: indexPath)
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoCellIdentifier") as? ToDoCell else {
+            fatalError("Could not dequeue")
+        }
+        cell.delegate = self
         let todo = todos[indexPath.row]
-        cell.textLabel?.text = todo.title
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-        let created = formatter.string(from: Date())
-        cell.detailTextLabel?.text = created
-        
+        cell.titleLabel?.text = todo.title
+        cell.isCompleteButton.isSelected = todo.isComplete
         return cell
     }
     
@@ -50,11 +57,37 @@ class SecondViewController: UITableViewController {
         if editingStyle == .delete {
             todos.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            ToDo.saveToDos(todos)
         }
     }
     
     @IBAction func unwindToDoList(segue: UIStoryboardSegue){
+        guard segue.identifier == "saveUnwind" else {return}
+        
+        let sourceViewController = segue.source as! AddToDoTableViewController
+        
+        if let todo = sourceViewController.todo {
+            
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                todos[selectedIndexPath.row] = todo
+                tableView.reloadRows(at: [selectedIndexPath], with: .none)
+            } else {
+                let newIndexPath = IndexPath(row: todos.count, section: 0)
+                todos.append(todo)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        }
+        ToDo.saveToDos(todos)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditToDo",
+            let navController = segue.destination as? UINavigationController,
+            let addToDoViewController = navController.topViewController as? AddToDoTableViewController {
+            let indexPath = tableView.indexPathForSelectedRow!
+            let selectedToDo = todos[indexPath.row]
+            addToDoViewController.todo = selectedToDo
+        }
     }
 
 
