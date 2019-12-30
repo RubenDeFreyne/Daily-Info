@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1B22C323BA51C30049479A /* WeatherSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1B22C223BA51C30049479A /* WeatherSettingsViewController.swift */; };
 		5DA88E0423B7A93A00641CAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA88E0323B7A93A00641CAF /* AppDelegate.swift */; };
 		5DA88E0623B7A93A00641CAF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA88E0523B7A93A00641CAF /* SceneDelegate.swift */; };
 		5DA88E0823B7A93A00641CAF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA88E0723B7A93A00641CAF /* FirstViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5D1B22C223BA51C30049479A /* WeatherSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSettingsViewController.swift; sourceTree = "<group>"; };
 		5DA88E0023B7A93A00641CAF /* Daily-Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Daily-Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DA88E0323B7A93A00641CAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DA88E0523B7A93A00641CAF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				5DA88E0723B7A93A00641CAF /* FirstViewController.swift */,
 				5DA88E0923B7A93A00641CAF /* SecondViewController.swift */,
 				5DD123D823B9033E00376E6C /* AddToDoTableViewController.swift */,
+				5D1B22C223BA51C30049479A /* WeatherSettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				5DA88E4223B80E7A00641CAF /* ToDo.xcdatamodeld in Sources */,
 				5DD123D923B9033E00376E6C /* AddToDoTableViewController.swift in Sources */,
 				5DA88E0A23B7A93A00641CAF /* SecondViewController.swift in Sources */,
+				5D1B22C323BA51C30049479A /* WeatherSettingsViewController.swift in Sources */,
 				5DA88E4423B80FCF00641CAF /* ToDo.swift in Sources */,
 				5DA88E0823B7A93A00641CAF /* FirstViewController.swift in Sources */,
 				5DA88E0423B7A93A00641CAF /* AppDelegate.swift in Sources */,
