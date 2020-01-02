@@ -10,6 +10,10 @@ import UIKit
 
 class FirstViewController: UIViewController {
     
+    let defaults = UserDefaults.standard
+    var units = "metric"
+    var postalCode = 9000
+    
     @IBOutlet weak var background: UIView!
     @IBOutlet weak var temperatureLabel: UILabel!
     @IBOutlet weak var feelTemperatureLabel: UILabel!
@@ -20,7 +24,10 @@ class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=9000,be&units=metric&appid=36a20216bae3ee8eb277b0bca81d534b") else {return}
+        
+        checkForWeatherSettings()
+        
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=9000,be&units=" + units + "&appid=36a20216bae3ee8eb277b0bca81d534b") else {return}
         
         //Create data and get session
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -51,8 +58,15 @@ class FirstViewController: UIViewController {
     
     func setWeather(weather: String?, description: String?, temp: Int, feelTemp: Int) {
         descriptionLabel.text = description ?? "..."
-        temperatureLabel.text = "\(temp)°C"
-        feelTemperatureLabel.text = "\(feelTemp)°C"
+        
+        if units == "metric"{
+            temperatureLabel.text = "\(temp)°C"
+            feelTemperatureLabel.text = "\(feelTemp)°C"
+        } else {
+            temperatureLabel.text = "\(temp)°F"
+            feelTemperatureLabel.text = "\(feelTemp)°F"
+        }
+        
         switch weather {
         case "Clear":
             imageView.image = UIImage(named: "Sunny")
@@ -80,6 +94,19 @@ class FirstViewController: UIViewController {
         default:
             imageView.image = UIImage(named: "Mist")
             background.backgroundColor = UIColor(red: 0.77, green: 0.77, blue: 0.77, alpha:1.0)
+        }
+    }
+    
+    @IBAction func unwindWeather(segue: UIStoryboardSegue){
+        guard segue.identifier == "saveUnwind" else {return}
+        viewDidLoad()
+    }
+    
+    func checkForWeatherSettings(){
+        units = defaults.string(forKey:"units") ?? "metric"
+        let usersPostalCode = defaults.integer(forKey:"postalCode")
+        if usersPostalCode != 0 {
+            postalCode = usersPostalCode
         }
     }
 }
