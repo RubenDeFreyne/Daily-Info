@@ -84,6 +84,7 @@
                         <outlet property="descriptionLabel" destination="JD2-5U-gRA" id="0id-14-hAV"/>
                         <outlet property="feelTemperatureLabel" destination="Xt7-Ot-4R5" id="qvB-Fc-Awc"/>
                         <outlet property="imageView" destination="3IV-me-48y" id="1OU-kS-xV2"/>
+                        <outlet property="locationText" destination="hF9-Fh-L9e" id="Bdd-aW-fuY"/>
                         <outlet property="temperatureLabel" destination="z5J-il-1bv" id="k2T-ZN-Y8B"/>
                     </connections>
                 </viewController>

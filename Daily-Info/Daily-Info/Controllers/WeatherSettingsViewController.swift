@@ -22,8 +22,18 @@ class WeatherSettingsViewController: UIViewController {
     var postalCode = 9000
     
     func updateSaveButtonState(){
-        let text = textField.text ?? ""
-        saveButton.isEnabled = !text.isEmpty
+        let int = Int(textField.text ?? "0") ?? 0
+        if int != 0 {
+            if int < 10000 && int > 999 {
+                saveButton.isEnabled = true
+                postalCode = int
+            }else {
+                saveButton.isEnabled = false
+            }
+        } else {
+            saveButton.isEnabled = false
+        }
+        
     }
 
     override func viewDidLoad(){

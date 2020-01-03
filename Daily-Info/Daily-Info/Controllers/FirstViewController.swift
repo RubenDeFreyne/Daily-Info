@@ -20,6 +20,7 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var locationText: UILabel!
     
 
     override func viewDidLoad() {
@@ -27,7 +28,10 @@ class FirstViewController: UIViewController {
         
         checkForWeatherSettings()
         
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=9000,be&units=" + units + "&appid=36a20216bae3ee8eb277b0bca81d534b") else {return}
+        self.setWeather(weather: "",  description: "Could not load weather", temp: 0, feelTemp: 0)
+        locationText.text = "Postal code doesn't exist"
+        
+        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?zip=" + String(postalCode) + ",be&units=" + units + "&appid=36a20216bae3ee8eb277b0bca81d534b") else {return}
         
         //Create data and get session
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -95,6 +99,8 @@ class FirstViewController: UIViewController {
             imageView.image = UIImage(named: "Mist")
             background.backgroundColor = UIColor(red: 0.77, green: 0.77, blue: 0.77, alpha:1.0)
         }
+        
+        locationText.text = "Postal code: \(String(postalCode))"
     }
     
     @IBAction func unwindWeather(segue: UIStoryboardSegue){
