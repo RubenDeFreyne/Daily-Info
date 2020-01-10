@@ -11,7 +11,7 @@ Simple IOS application to use when you wake up. You can take a look at today's w
   <tr>
   </tr>
   <tr>
-    <td>Weather view example 1/td>
+    <td>Weather view example 1</td>
     <td>Weather view example 2</td>
     <td>Weather edit</td>
   </tr>
