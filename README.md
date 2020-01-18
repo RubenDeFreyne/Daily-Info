@@ -17,7 +17,7 @@ Simple IOS application to use when you wake up. You can take a look at today's w
   </tr>
   <tr>
     <td><img src="./Screenshots/weather-home.png?raw=true" width="256px"></td>
-    <td></td>
+    <td><img src="./Screenshots/weather-home2.png?raw=true" width="256px"></td>
     <td><img src="./Screenshots/weather-edit.png?raw=true" width="256px"></td>
   </tr>
   <tr>
