@@ -42,3 +42,15 @@ Simple IOS application to use when you wake up. You can take a look at today's w
     <td><img src="./Screenshots/notes-edit.png?raw=true" width="256px"></td>
   </tr>
 </table>
+
+## Getting started
+
+### Installing
+
+Clone this repo and open `Daily-Info.xcodeproj`.
+
+```zsh
+git clone https://github.com/RubenDeFreyne/Daily-Info.git
+cd Daily-Info
+open Daily-Info/Daily-Info.xcodeproj
+```
