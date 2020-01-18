@@ -22,6 +22,7 @@
 		5DA88E4423B80FCF00641CAF /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA88E4323B80FCF00641CAF /* ToDo.swift */; };
 		5DD08CC123D35BCA003FBBD7 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD08CC023D35BCA003FBBD7 /* NotesViewController.swift */; };
 		5DD08CC323D35D21003FBBD7 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD08CC223D35D21003FBBD7 /* Note.swift */; };
+		5DD08CC523D36E6E003FBBD7 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD08CC423D36E6E003FBBD7 /* AddNoteViewController.swift */; };
 		5DD123D923B9033E00376E6C /* AddToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD123D823B9033E00376E6C /* AddToDoTableViewController.swift */; };
 		5DD123DB23B92BE800376E6C /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DD123DA23B92BE800376E6C /* ToDoCell.swift */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		5DA88E4323B80FCF00641CAF /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
 		5DD08CC023D35BCA003FBBD7 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		5DD08CC223D35D21003FBBD7 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		5DD08CC423D36E6E003FBBD7 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		5DD123D823B9033E00376E6C /* AddToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoTableViewController.swift; sourceTree = "<group>"; };
 		5DD123DA23B92BE800376E6C /* ToDoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 				5DD123D823B9033E00376E6C /* AddToDoTableViewController.swift */,
 				5D1B22C223BA51C30049479A /* WeatherSettingsViewController.swift */,
 				5DD08CC023D35BCA003FBBD7 /* NotesViewController.swift */,
+				5DD08CC423D36E6E003FBBD7 /* AddNoteViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				5DA88E0823B7A93A00641CAF /* FirstViewController.swift in Sources */,
 				5DD08CC123D35BCA003FBBD7 /* NotesViewController.swift in Sources */,
 				5DD08CC323D35D21003FBBD7 /* Note.swift in Sources */,
+				5DD08CC523D36E6E003FBBD7 /* AddNoteViewController.swift in Sources */,
 				5DA88E0423B7A93A00641CAF /* AppDelegate.swift in Sources */,
 				5DA88E0623B7A93A00641CAF /* SceneDelegate.swift in Sources */,
 				5DD123DB23B92BE800376E6C /* ToDoCell.swift in Sources */,
