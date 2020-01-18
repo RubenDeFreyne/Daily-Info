@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./Screenshots/dailyinfo.png?raw=true" width="200px"/>
+  <img src="./Screenshots/dailyinfo.png?raw=true" width="200px" style="border-radius:5%"/>
 </p>
 
 <h1 align="center">Daily-info</h1>
