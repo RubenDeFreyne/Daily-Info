@@ -1,4 +1,5 @@
 <p align="center">
+  <img src="./Screenshots/dailyinfo.png?raw=true" width="200px"/>
 </p>
 
 <h1 align="center">Daily-info</h1>
