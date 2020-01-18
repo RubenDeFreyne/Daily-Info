@@ -31,4 +31,14 @@ Simple IOS application to use when you wake up. You can take a look at today's w
     <td><img src="./Screenshots/todo-create.png?raw=true" width="256px"></td>
     <td><img src="./Screenshots/todo-edit.png?raw=true" width="256px"></td>
   </tr>
+  <tr>
+    <td>Notes list</td>
+    <td>Notes list edit</td>
+    <td>Edit and Create notes</td>
+  </tr>
+  <tr>
+    <td><img src="./Screenshots/notes-list.png?raw=true" width="256px"></td>
+    <td><img src="./Screenshots/notes-list-edit.png?raw=true" width="256px"></td>
+    <td><img src="./Screenshots/notes-edit.png?raw=true" width="256px"></td>
+  </tr>
 </table>
