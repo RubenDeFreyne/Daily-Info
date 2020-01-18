@@ -4,7 +4,7 @@
 
 <h1 align="center">Daily-info</h1>
 
-Simple IOS application to use when you wake up. You can take a look at today's weather and planned chores.
+Simple IOS application to use when you wake up. You can take a look at today's weather, see your planned chores in a todo list and save important memos in a note.
 
 ## Screenshots
 
